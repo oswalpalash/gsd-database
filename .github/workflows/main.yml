@@ -9,6 +9,6 @@ jobs:
       - name: json-check
         run: |
           echo "Listing Changed JSON Files"
-          FILES=$(git diff --name-only "$GITHUB_HEAD_REF..$GITHUB_REF" | grep "json")
+          FILES=$(git diff --name-only "$GITHUB_HEAD_REF  $GITHUB_REF" | grep "json")
           echo "\$FILES"
           echo "\$FILES" | xargs -n1 -I {} python -m json.tool {}
