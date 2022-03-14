@@ -8,7 +8,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: json-check
         run: |
-	echo "Listing Changed JSON Files"
-	FILES=$(git diff --name-only "$GITHUB_BASE_REF..$GITHUB_SHA" | grep "json")
-	echo $FILES
-	echo $FILES | xargs -n1 -I {} python -m json.tool {}
+	  echo "Listing Changed JSON Files"
+	  FILES=$(git diff --name-only "$GITHUB_BASE_REF..$GITHUB_SHA" | grep "json")
+	  echo $FILES
+	  echo $FILES | xargs -n1 -I {} python -m json.tool {}
